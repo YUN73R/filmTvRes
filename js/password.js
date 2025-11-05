@@ -26,6 +26,7 @@ function isPasswordRequired() {
  * 在关键操作前都应该调用此函数
  */
 function ensurePasswordProtection() {
+    return true;
     if (isPasswordRequired()) {
         showPasswordModal();
         throw new Error('Password protection is required');
@@ -110,6 +111,7 @@ async function sha256(message) {
  * 显示密码验证弹窗
  */
 function showPasswordModal() {
+    return true;
     const passwordModal = document.getElementById('passwordModal');
     if (passwordModal) {
         // 防止出现豆瓣区域滚动条
@@ -226,6 +228,7 @@ async function handlePasswordSubmit() {
  * 初始化密码验证系统
  */
 function initPasswordProtection() {
+    return true;
     // 如果需要强制设置密码，显示警告弹窗
     if (isPasswordRequired()) {
         showPasswordModal();
